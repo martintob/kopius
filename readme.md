@@ -1,22 +1,16 @@
-===================================================
-===================================================
-===================================================
-     PLAYWRIGHT TEST AUTOMATION PROJECT                                                   
-===================================================
-===================================================
-===================================================
-
+======================================
+PLAYWRIGHT TEST AUTOMATION PROJECT
+======================================
+======================================
 This repository contains a web test automation project developed using Playwright and JavaScript. Its primary goal is to ensure the robust functionality of the official Playwright documentation website.
 
-===================================================
-PROJECT OVERVIEW
-===================================================
+=== PROJECT OVERVIEW ===
 
 This project includes automated tests for some key user flows on https://playwright.dev/. For instance, one of the primary automated scenarios simulates a user's interaction with the documentation search feature. This includes navigating to the Docs section, confirming the page title, interacting with the search bar to type a term (like "browserContext" or "Page"), clicking a specific search result, and finally verifying the resulting URL. The design allows for easy expansion to cover additional test scenarios as the project evolves.
 
-===================================================
+======================================
 GETTING STARTED (INSTALLATION)
-===================================================
+======================================
 
 To set up and run this project locally, ensure you have Node.js (version 18+ recommended) and npm (included with Node.js) installed.
 
@@ -36,9 +30,9 @@ To set up and run this project locally, ensure you have Node.js (version 18+ rec
     npx playwright install
     ```
 
-===================================================
+======================================
 RUNNING THE TESTS
-===================================================
+======================================
 
 Once setup is complete, you can execute the automated tests:
 
@@ -57,9 +51,9 @@ Once setup is complete, you can execute the automated tests:
     npx playwright show-report
     ```
 
-===================================================
+======================================
 CODE ORGANIZATION (PAGE OBJECT MODEL)
-===================================================
+======================================
 
 The project adheres to the **Page Object Model (POM)** design pattern, which significantly enhances code readability, maintainability, and reusability. Each significant web page or reusable component has a corresponding "Page Object" (a JavaScript class) that encapsulates its selectors and actions.
 
@@ -71,9 +65,9 @@ Test scenarios are defined within the `tests/` directory (`.spec.js` files). The
 
 External data for tests, such as search terms and expected results, is stored in `data/docsSearchData.json`. This approach promotes data-driven testing and allows for easy addition of new test scenarios without modifying the core test logic.
 
-===================================================
+======================================
 COMMON ISSUES & SOLUTIONS
-===================================================
+======================================
 
 During the project's development, we ran into a couple of typical automation challenges:
 
@@ -82,9 +76,9 @@ During the project's development, we ran into a couple of typical automation cha
 * **Ambiguous Search Results:** When searching, Playwright occasionally identified multiple elements matching a broad query, leading to "strict mode violation" errors. To fix this, we made our selectors more specific within the `SearchComponent.js`, ensuring Playwright clicked the exact intended result (e.g., by matching the full name like "BrowserContext").
 
 
-===================================================
+======================================
 EXTRA EXPLANATION: HOWs and WHYs
-===================================================
+======================================
 
 
 For finding things on the page ('selectors'):
@@ -100,9 +94,9 @@ For checking that everything worked ('validations'):
     -- docsPage.verifyUrlContains(expectedUrlPartial): Looks if the web address (URL) is what we expect.
 
 
-===================================================
+======================================
 ROOM FOR IMPROVEMENTS!
-===================================================
+======================================
 
 GitHub Flow:
 -- In a real project, to make sure the main code is always working well and we can all work together without issues, the key is for everyone to have their own temporary workspace (a 'branch'). Imagine that for every Jira task you have – for example, if your ticket is AT-123 and it's for creating a new login test – we create a special branch called feature/AT-123--test-login. This way, everyone can work on their part without breaking the main code. When we finish our task, we send it for 'review' (that's a Pull Request), and once someone else approves it, only then does that code join the main codebase. This ensures everything is organized, we know which change goes with which task, and the main version of the code works perfectly.
