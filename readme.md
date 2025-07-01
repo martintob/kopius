@@ -1,6 +1,10 @@
-                                                    ***************************************************
-                                                        * PLAYWRIGHT TEST AUTOMATION PROJECT *
-                                                    ***************************************************
+===================================================
+===================================================
+===================================================
+     PLAYWRIGHT TEST AUTOMATION PROJECT                                                   
+===================================================
+===================================================
+===================================================
 
 This repository contains a web test automation project developed using Playwright and JavaScript. Its primary goal is to ensure the robust functionality of the official Playwright documentation website.
 
@@ -76,3 +80,21 @@ During the project's development, we ran into a couple of typical automation cha
 * **Search Icon Not Found:** Initially, Playwright would sometimes time out or fail to locate the search icon. This was resolved by refining the selector to `.DocSearch-Button`, which proved to be more precise and reliable for identifying the element.
 
 * **Ambiguous Search Results:** When searching, Playwright occasionally identified multiple elements matching a broad query, leading to "strict mode violation" errors. To fix this, we made our selectors more specific within the `SearchComponent.js`, ensuring Playwright clicked the exact intended result (e.g., by matching the full name like "BrowserContext").
+
+
+===================================================
+EXTRA EXPLANATION: HOWs and WHYs
+===================================================
+
+
+For finding things on the page ('selectors'):
+-- I told Playwright to find things how a human would see them. For example:
+    -- For a button or link, I say: page.getByRole('link', { name: 'Docs' }) 
+        (find the link that says 'Docs').
+    -- For a search icon: page.locator('.DocSearch-Button') 
+        (find the magnifying glass).
+
+For checking that everything worked ('validations'):
+-- After every important step, the test 'checks' if things are as they should be. I use Playwright's expect, which is like saying: "I expect this to be true." For example:
+    -- docsPage.verifyPageTitle('Installation'): Checks if the page title is 'Installation'.
+    -- docsPage.verifyUrlContains(expectedUrlPartial): Looks if the web address (URL) is what we expect.
