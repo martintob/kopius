@@ -1,4 +1,4 @@
-// pages/BasePage.js
+// pages/basePage.js
 
 class BasePage {
     /**

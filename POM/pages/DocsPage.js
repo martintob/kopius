@@ -1,7 +1,7 @@
-// pages/DocsPage.js
+// pages/docsPage.js
 const { expect } = require('@playwright/test');
-const BasePage = require('./BasePage');
-const SearchComponent = require('./SearchComponent');
+const BasePage = require('./basePage');
+const SearchComponent = require('./searchComponent');
 
 class DocsPage extends BasePage {
     /**
@@ -20,11 +20,11 @@ class DocsPage extends BasePage {
         await expect(this.pageTitle).toHaveText(expectedTitle);
     }
 
-    async openSearchAndSearchFor(searchText) {
+    async openSearchAndSearchFor(searchText, expectedResultName) { 
         await expect(this.searchIcon).toBeVisible();
         await this.searchIcon.click();
 
-        await this.search.typeAndSelectResult(searchText, 'BrowserContext'); // Modificado para pasar el nombre exacto esperado
+        await this.search.typeAndSelectResult(searchText, expectedResultName); 
     }
 
     async verifyUrlContains(partialUrl) {

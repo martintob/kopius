@@ -1,0 +1,12 @@
+{
+  "browserContextSearch": {
+    "searchTerm": "browserContext",
+    "expectedResultName": "BrowserContext",
+    "expectedUrlPartial": "/class-browsercontext"
+  },
+  "pageSearch": { 
+    "searchTerm": "page",
+    "expectedResultName": "Page", 
+    "expectedUrlPartial": "/class-page"
+  }
+}

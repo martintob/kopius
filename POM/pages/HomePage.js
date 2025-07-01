@@ -1,7 +1,8 @@
-// pages/HomePage.js
+// pages/homePage.js
 
 const { expect } = require('@playwright/test');
-const BasePage = require('./BasePage');
+const BasePage = require('./basePage');
+const DocsPage = require('./docsPage');
 
 class HomePage extends BasePage {
     /**
@@ -16,7 +17,6 @@ class HomePage extends BasePage {
         await expect(this.docsLink).toBeVisible();
         await this.docsLink.click();
         
-        const DocsPage = require('./DocsPage');
         return new DocsPage(this.page);
     }
 }

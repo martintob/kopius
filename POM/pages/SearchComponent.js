@@ -1,4 +1,4 @@
-// pages/SearchComponent.js
+// pages/searchComponent.js
 
 const { expect } = require('@playwright/test');
 
@@ -16,7 +16,7 @@ class SearchComponent {
         await expect(this.searchInput).toBeVisible();
         await this.searchInput.fill(searchText);
 
-        const resultLink = this.searchResults.getByRole('link', { name: 'BrowserContext', exact: true });
+        const resultLink = this.searchResults.getByRole('link', { name: resultName, exact: true });
 
         await expect(resultLink).toBeVisible();
         await resultLink.click();
