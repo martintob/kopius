@@ -98,3 +98,25 @@ For checking that everything worked ('validations'):
 -- After every important step, the test 'checks' if things are as they should be. I use Playwright's expect, which is like saying: "I expect this to be true." For example:
     -- docsPage.verifyPageTitle('Installation'): Checks if the page title is 'Installation'.
     -- docsPage.verifyUrlContains(expectedUrlPartial): Looks if the web address (URL) is what we expect.
+
+
+===================================================
+ROOM FOR IMPROVEMENTS!
+===================================================
+
+GitHub Flow:
+-- In a real project, to make sure the main code is always working well and we can all work together without issues, the key is for everyone to have their own temporary workspace (a 'branch'). Imagine that for every Jira task you have – for example, if your ticket is AT-123 and it's for creating a new login test – we create a special branch called feature/AT-123--test-login. This way, everyone can work on their part without breaking the main code. When we finish our task, we send it for 'review' (that's a Pull Request), and once someone else approves it, only then does that code join the main codebase. This ensures everything is organized, we know which change goes with which task, and the main version of the code works perfectly.
+
+Test Coverage:
+-- Right now, you test the search. But you could add tests for going to other parts of the website, filling out forms (if there are any), or testing full user journeys (like signing up or logging in). Think about everything a user might do on the site.
+-- Also, try negative tests: What if you search for something that doesn't exist? Does the page handle it well? Testing these 'weird cases' is very useful.
+
+Reports:
+-- Playwright gives you good basic reports, but you can link it with tools like Allure Report. This gives you much better-looking reports, with dashboards, automatic screenshots when tests fail, videos, and a history of results. This helps you see if tests are 'flaky' (failing sometimes for no clear reason).
+-- We could even set up alerts so if a test fails, you get a message on Slack or an email.
+
+CI/CD:
+-- We can set up our project so the tests run by themselves every time someone makes a change to the code (using tools like GitHub Actions / Jenkins). This means you don't have to run tests by hand. You know right away if a code change has 'broken' something. This is key when working in a team.
+
+Environments:
+-- We can set up our project to be tested in different environments (Dev, QA, Prod) or different browsers (Chrome, Firefox, Edge, Safari). This way, we can be sure everything works well everywhere. 
