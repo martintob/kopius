@@ -4,6 +4,7 @@ This repository contains a web test automation project developed using Playwrigh
 
 -----
 
+
 ===PROJECT OVERVIEW===
 
 This project includes automated tests for some key user flows on https://playwright.dev/. For instance, one of the primary automated scenarios simulates a user's interaction with the documentation search feature. This includes navigating to the Docs section, confirming the page title, interacting with the search bar to type a term (like "browserContext" or "Page"), clicking a specific search result, and finally verifying the resulting URL. The design allows for easy expansion to cover additional test scenarios as the project evolves.
