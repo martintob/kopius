@@ -1,7 +1,6 @@
 ======================================
 PLAYWRIGHT TEST AUTOMATION PROJECT
 ======================================
-======================================
 
 This repository contains a web test automation project developed using Playwright and JavaScript. Its primary goal is to ensure the robust functionality of the official Playwright documentation website.
 
