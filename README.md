@@ -60,7 +60,7 @@ Test scenarios are defined within the `tests/` directory (`.spec.js` files). The
 
 External data for tests, such as search terms and expected results, is stored in `data/docsSearchData.json`. This approach promotes data-driven testing and allows for easy addition of new test scenarios without modifying the core test logic.
 
-====COMMON ISSUES & SOLUTIONS===
+===COMMON ISSUES & SOLUTIONS===
 
 During the project's development, we ran into a couple of typical automation challenges:
 
